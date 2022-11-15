@@ -1,6 +1,6 @@
 # M320 KO1
 
-## Terms to be Elaboration 
+## Terms to be Elaborated
 Not part of this competence
 
 
