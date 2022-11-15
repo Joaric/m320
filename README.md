@@ -19,6 +19,8 @@ So we came up with the idea, to recreate the Valorant menu, in a TUI-based
 output. Basically the User can decide, weather he wants to Play, Look at his Career, Battlepass progress,
 Skin Collection, Agent Contracts or his Store, where he can buy skins that are in the item shop.
 
+## Activity Diagram
+![img.png](img.png)
 
 
 
