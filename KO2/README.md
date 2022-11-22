@@ -2,35 +2,34 @@
 
 ## Terms to be Elaborated
 
-**Information hiding**: Information hiding is a software design principle
+**Information hiding**: Information hiding is a software design principle. Where our clients are incapable to access few aspects
+of our program and module. The reasoning for this is, so that we prevent extensive modification to clients when the implementation
+details of a program/class/module are changed.
 
 
 
+**Encapsulation**:  Encapsulation in Java refers to integrating variable and methods into a single unit.
+Variables from a class are invalid/hidden from other classes. The only way of retrieving them, are by accessing them via
+methods which lay within the class.
 
 
+**Getter, Setter**:  Getters and setter are known and used to protect data They also are known
+as accessors. Especially when creating classes.
+Each instance a getter returns their value and the setter usually sets or updates its value(CRUD-Element impl).
 
 
-Information hiding is a software design principle, where certain aspects of a program or module (the “secrets”) 
-are inaccessible to clients. The primary goal is to prevent extensive modification
-to clients whenever the implementation details of a module or program are changed.
+**Delegation**: In OOP delegation refers to evaluating a method of an/one object with the understanding of another original object
+which is the sender!
+
+delegation refers to evaluating a member (property or method)
+of one object (the receiver) in the context of another original object (the sender).
 
 ## Project & Implementation
-**Themenbereich**: Valorant (E-Sports Industry)
+**Themenbereich**: Terms being used
 
-In this competence we were tasked with creating a Java
-Class & a bit ofe Code, with these requirements:
-**Project Requirements**:
-- They work only in a class (procedural) as in the module m319.
-- You define a process, which you represent in an activity diagram. In the diagram you must use at least one loop, at least one decision and at least one abstraction. The diagram symbols must be correct.
-- You create a simple TUI (text-based user interface). Input and output of data is mandatory.
-- They map their process in code. You use at least two basic data types.
+We used **Encapsulation** in the Agent class, where our fields are only accessible trough getting the methods implemented in the
+Agent class.
 
-So we came up with the idea, to recreate the Valorant menu, in a TUI-based
-output. Basically the User can decide, weather he wants to Play, Look at his Career, Battlepass progress,
-Skin Collection, Agent Contracts or his Store, where he can buy skins that are in the item shop.
+We used **Delegation** so that we can use the getter and setter for the Agent class.
 
-## Activity Diagram
-
-
-
-
+Agent and Menu has information hiding implemented.
