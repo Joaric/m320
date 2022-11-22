@@ -20,7 +20,7 @@ output. Basically the User can decide, weather he wants to Play, Look at his Car
 Skin Collection, Agent Contracts or his Store, where he can buy skins that are in the item shop.
 
 ## Activity Diagram
-![img.png](img.png)
+![img.png](../../img.png)
 
 
 
