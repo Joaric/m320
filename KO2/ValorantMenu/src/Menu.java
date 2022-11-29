@@ -1,80 +1,119 @@
 import java.util.ArrayList;
+import java.util.Random;
 import java.util.Scanner;
 
 public class Menu {
-    static ArrayList<Match> matchHistory = new ArrayList<Match>();
+    ArrayList<Match> matchHistory = new ArrayList<Match>();
 
-    private Menu() {}
+    public Menu() {}
 
+    public boolean printMenu() throws Exception {
+        try {
+            Scanner sc = new Scanner(System.in);
 
-    public static boolean printMenu() {
-        Scanner sc = new Scanner(System.in);
-
-        System.out.println("""
-                (1) PLAY
-                (2) CAREER
-                (3) BATTLE PASS
-                (4) COLLECTION
-                (5) AGENTS
-                (6) STORE
-                (0) EXIT""");
-        switch (sc.nextInt()) {
-            case 1 -> showPlayMenu();
-            case 2 -> showCareerMenu();
-            case 3 -> showBPMenu();
-            case 4 -> showCollectionMenu();
-            case 5 -> showAgentsMenu();
-            case 6 -> showStoreMenu();
-            case 0 -> {
-                return false;
+            System.out.println("""
+                    (1) PLAY
+                    (2) CAREER
+                    (3) BATTLE PASS
+                    (4) COLLECTION
+                    (5) AGENTS
+                    (6) STORE
+                    (0) EXIT""");
+            switch (sc.nextInt()) {
+                case 1 -> this.showPlayMenu();
+                case 2 -> this.showCareerMenu();
+                case 3 -> this.showBPMenu();
+                case 4 -> this.showCollectionMenu();
+                case 5 -> this.showAgentsMenu();
+                case 6 -> this.showStoreMenu();
+                case 0 -> {
+                    return false;
+                }
             }
+        } catch (Exception e) {
+            throw new Exception("Wrong input error.");
         }
         return true;
     }
 
-    private static void showPlayMenu() {
+    public void printMatchHistory() {
+        ArrayList<Match> matchHistory = this.getMatchHistory();
+        if (matchHistory == null || matchHistory.size() == 0) {
+            System.out.println("Match history not found.");
+        } else {
+            for (Match match : matchHistory) {
+                if (match.getMode().equals("Competitive")) {
+                    if (match.getGameState().equals("WIN")) {
+                        System.out.print("+");
+                    } else {
+                        System.out.print("-");
+                    }
+                    System.out.print(match.getRankedRating() + "RR");
+                } else {
+                    System.out.print("    ");
+                }
+                System.out.println("\t\t" + match.getMode() + "\t\tAgent: " + match.getAgent() + "\t\t Map:" + match.getMap() + "\t\t " + match.getGameState());
+            }
+        }
+    }
+
+    public void createMatch(String mode) {
+        Random rand = new Random();
+        String gameState = null;
+        int rankedRating = rand.nextInt(16) + 10;
+        int roundsWon = rand.nextInt(14);
+        int roundsLost = rand.nextInt(14);
+        String agent = Agents.getAgents().get(rand.nextInt(20)).getName();
+        String map = "Fracture";
+
+        if (roundsWon - roundsLost > 0) {
+            gameState = "WIN";
+        } else if (roundsWon - roundsLost < 0) {
+            gameState = "LOSS";
+        } else {
+            gameState = "DRAW";
+        }
+        this.addMatchToHistory(new Match(mode, gameState, roundsWon, roundsLost, rankedRating, agent, map));
+        System.out.println(mode + " match created.");
+    }
+
+    private void showPlayMenu() {
         Scanner sc = new Scanner(System.in);
         boolean backToMenu = true;
 
-        do {
-            System.out.println("""
-                    (1) Unrated
-                    (2) Competitive
-                    (3) Spike rush
-                    (4) Deathmatch
-                    (5) Escalation
-                    (6) Custom Game
-                    (0) Back to main menu""");
-            int usrInput = sc.nextInt();
-            switch (usrInput) {
-                case 1 -> Match.createMatch("Unrated");
-                case 2 -> Match.createMatch("Competitive");
-                case 3 -> Match.createMatch("Spike rush");
-                case 4 -> Match.createMatch("Deathmatch");
-                case 5 -> Match.createMatch("Escalation");
-                case 6 -> Match.createMatch("Custom Game");
-                case 0 -> backToMenu = false;
-            }
-        } while (backToMenu);
+            do {
+                System.out.println("""
+                        (1) Unrated
+                        (2) Competitive
+                        (3) Spike rush
+                        (4) Deathmatch
+                        (5) Escalation
+                        (6) Custom Game
+                        (0) Back to main menu""");
+                int usrInput = sc.nextInt();
+                switch (usrInput) {
+                    case 1 -> this.createMatch("Unrated");
+                    case 2 -> this.createMatch("Competitive");
+                    case 3 -> this.createMatch("Spike rush");
+                    case 4 -> this.createMatch("Deathmatch");
+                    case 5 -> this.createMatch("Escalation");
+                    case 6 -> this.createMatch("Custom Game");
+                    case 0 -> backToMenu = false;
+                }
+            } while (backToMenu);
     }
 
-    private static void showCareerMenu() {
+    private void showCareerMenu() {
         Scanner sc = new Scanner(System.in);
-        boolean backToMenu = true;
 
-        do {
-            Match.printMatchHistory();
-            if (sc.nextInt() == 0) {
-                backToMenu = false;
-            }
-        } while (backToMenu);
+        this.printMatchHistory();
     }
 
-    private static void showBPMenu() {
+    private void showBPMenu() {
         System.out.println("No battle pass available");
     }
 
-    private static void showCollectionMenu() {
+    private void showCollectionMenu() {
         Scanner sc = new Scanner(System.in);
         boolean backToMenu = true;
         do {
@@ -93,7 +132,7 @@ public class Menu {
         } while (backToMenu);
     }
 
-    private static void showAgentsMenu() {
+    private void showAgentsMenu() {
         ArrayList<Agents> agents = Agents.getAgents();
         for (int i = 0; i < agents.size(); i++) {
             System.out.println(i + "." + agents.get(i).getName() + " | " + agents.get(i).getRole());
@@ -101,7 +140,7 @@ public class Menu {
         System.out.println("");
     }
 
-    private static void showStoreMenu() {
+    private void showStoreMenu() {
         Scanner sc = new Scanner(System.in);
         boolean backToMenu = true;
         do {
@@ -118,15 +157,15 @@ public class Menu {
         } while (backToMenu);
     }
 
-    public static ArrayList<Match> getMatchHistory() {
-        return matchHistory;
+    public ArrayList<Match> getMatchHistory() {
+        return this.matchHistory;
     }
 
     public void setMatchHistory(ArrayList<Match> matchHistory) {
-        Menu.matchHistory = matchHistory;
+        this.matchHistory = matchHistory;
     }
 
-    public static void addMatchToHistory(Match match) {
-        getMatchHistory().add(match);
+    public void addMatchToHistory(Match match) {
+        this.matchHistory.add(match);
     }
 }

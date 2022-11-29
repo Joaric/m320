@@ -1,6 +1,3 @@
-import java.util.ArrayList;
-import java.util.Random;
-
 public class Match {
     String mode;
     String gameState;
@@ -20,46 +17,8 @@ public class Match {
         this.map = map;
     }
 
-    public static void createMatch(String mode) {
-        Random rand = new Random();
-        String gameState = null;
-        int rankedRating = rand.nextInt(16) + 10;
-        int roundsWon = rand.nextInt(14);
-        int roundsLost = rand.nextInt(14);
-        String agent = Agents.getAgents().get(rand.nextInt(20)).getName();
-        String map = "Fracture";
+    public Match() {
 
-        if (roundsWon - roundsLost > 0) {
-            gameState = "WIN";
-        } else if (roundsWon - roundsLost < 0) {
-            gameState = "LOSS";
-        } else {
-            gameState = "DRAW";
-        }
-        Match match = new Match(mode, gameState, roundsWon, roundsLost, rankedRating, agent, map);
-        Menu.addMatchToHistory(match);
-        System.out.println(mode + " match created.");
-    }
-
-    public static void printMatchHistory() {
-        ArrayList<Match> matchHistory = Menu.getMatchHistory();
-        if (matchHistory == null) {
-            System.out.println("Match history not found.");
-        } else {
-            for (int i = 0; i < matchHistory.size(); i++) {
-                if (matchHistory.get(i).getMode().equals("Competitive")) {
-                    if (matchHistory.get(i).getGameState().equals("WIN")) {
-                        System.out.print("+");
-                    } else {
-                        System.out.print("-");
-                    }
-                    System.out.print(matchHistory.get(i).getRankedRating() + "RR");
-                } else {
-                    System.out.print("    ");
-                }
-                System.out.println("\t\t" + matchHistory.get(i).getMode() + "\t\tAgent: " + matchHistory.get(i).getAgent() + "\t\t Map:" + matchHistory.get(i).getMap() + "\t\t " + matchHistory.get(i).getGameState());
-            }
-        }
     }
 
     public String getMode() {
