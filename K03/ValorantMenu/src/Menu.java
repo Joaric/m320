@@ -1,7 +1,4 @@
-import java.util.ArrayList;
-import java.util.InputMismatchException;
-import java.util.Random;
-import java.util.Scanner;
+import java.util.*;
 
 public class Menu {
     ArrayList<Match> matchHistory = new ArrayList<Match>();
@@ -137,12 +134,29 @@ public class Menu {
         } while (backToMenu);
     }
 
-    private void showAgentsMenu() throws WrongInputException {
+    private void showAgentsMenu() {
+        Agents agentsCall = new Agents();
+        Scanner sc = new Scanner(System.in);
+        int usrInput;
+        boolean backToMenu = true;
+        do {
         ArrayList<Agents> agents = Agents.getAgents();
         for (int i = 0; i < agents.size(); i++) {
             System.out.println(i + "." + agents.get(i).getName() + " | " + agents.get(i).getRole());
         }
-        System.out.println("");
+        System.out.println("""
+                
+                (1 - 20) Select an agent for role description
+                (0) Back to game
+                """);
+        usrInput = sc.nextInt();
+            System.out.println(usrInput + ". " + agents.get(usrInput).getName() + ": " + agents.get(usrInput).getRole());
+            agents.get(usrInput).getRoleDescription();
+            System.out.println("(0) Return to game");
+            if (sc.nextInt() == 0) {
+                backToMenu = false;
+            }
+        } while (backToMenu);
     }
 
     private void showStoreMenu() {
