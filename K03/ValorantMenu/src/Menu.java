@@ -136,7 +136,6 @@ public class Menu {
 
     private void showAgentsMenu() {
         Agents agentsCall = new Agents();
-        AgentRoles agentRoles = new AgentRoles();
         Scanner sc = new Scanner(System.in);
         int usrInput;
         boolean backToMenu = true;
@@ -152,11 +151,7 @@ public class Menu {
                 """);
         usrInput = sc.nextInt();
             System.out.println(usrInput + ". " + agents.get(usrInput).getName() + ": " + agents.get(usrInput).getRole());
-        if (Objects.equals(agents.get(usrInput).getRole(), "Duelist")) {
-            agentsCall.getRoleDescription("Duelist");
-        } else {
-            agentRoles.getRoleDescription(agents.get(usrInput).getRole());
-        }
+            agents.get(usrInput).getRoleDescription();
             System.out.println("(0) Return to game");
             if (sc.nextInt() == 0) {
                 backToMenu = false;

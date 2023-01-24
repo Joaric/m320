@@ -19,30 +19,30 @@ public class Agents {
 
     public static ArrayList<Agents> getAgents() {
         ArrayList<Agents> agents = new ArrayList<Agents>();
-        agents.add(new Agents("Brimstone", "Controller"));
-        agents.add(new Agents("Phoenix"));
-        agents.add(new Agents("Sage", "Sentinel"));
-        agents.add(new Agents("Sova", "Initiator"));
-        agents.add(new Agents("Viper", "Controller"));
-        agents.add(new Agents("Cypher", "Sentinel"));
-        agents.add(new Agents("Reyna"));
-        agents.add(new Agents("Killjoy", "Sentinel"));
-        agents.add(new Agents("Breach", "Initiator"));
-        agents.add(new Agents("Omen", "Controller"));
-        agents.add(new Agents("Jett"));
-        agents.add(new Agents("Raze"));
-        agents.add(new Agents("Skye", "Initiator"));
-        agents.add(new Agents("Yoru"));
-        agents.add(new Agents("Astra", "Controller"));
-        agents.add(new Agents("Kay/o", "Initiator"));
-        agents.add(new Agents("Chamber", "Sentinel"));
-        agents.add(new Agents("Neon"));
-        agents.add(new Agents("Fade", "Initiator"));
-        agents.add(new Agents("Harbor", "Controller"));
+        agents.add(new Controller("Brimstone"));
+        agents.add(new Duelist("Phoenix"));
+        agents.add(new Sentinel("Sage"));
+        agents.add(new Initiator("Sova"));
+        agents.add(new Controller("Viper"));
+        agents.add(new Sentinel("Cypher"));
+        agents.add(new Duelist("Reyna"));
+        agents.add(new Sentinel("Killjoy"));
+        agents.add(new Initiator("Breach"));
+        agents.add(new Controller("Omen"));
+        agents.add(new Duelist("Jett"));
+        agents.add(new Duelist("Raze"));
+        agents.add(new Duelist("Skye"));
+        agents.add(new Duelist("Yoru"));
+        agents.add(new Controller("Astra"));
+        agents.add(new Initiator("Kay/o"));
+        agents.add(new Sentinel("Chamber"));
+        agents.add(new Duelist("Neon"));
+        agents.add(new Initiator("Fade"));
+        agents.add(new Controller("Harbor"));
         return agents;
     }
 
-    public void getRoleDescription(String role) {
+    public void getRoleDescription() {
     }
 
     public String getName() {
