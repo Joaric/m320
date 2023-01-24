@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5c3b7fa3-b012-42f4-9d8e-b1f2c9c3d939" name="Changes" comment="">
+    <list default="true" id="501af813-7912-4ad0-85c5-5ad4d3bf2b7b" name="Changes" comment="">
       <change afterPath="$PROJECT_DIR$/../KO5/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../KO4/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../KO4/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -17,27 +16,27 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="ProjectId" id="2JAsMCF6XnpTQtTPnm71WIC3z8f" />
+  <component name="ProjectId" id="2KRdGbABrTtT7fmp747kZvga9db" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/aryanaravinth/Documents/GitHub/m320/Untitled/m320/KO4&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "last_opened_file_path": "/Users/aryanaravinth/Documents/GitHub/m320/Untitled/m320/K04"
   }
-}</component>
+}]]></component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="5c3b7fa3-b012-42f4-9d8e-b1f2c9c3d939" name="Changes" comment="" />
-      <created>1671532172816</created>
+      <changelist id="501af813-7912-4ad0-85c5-5ad4d3bf2b7b" name="Changes" comment="" />
+      <created>1673941234883</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1671532172816</updated>
+      <updated>1673941234883</updated>
     </task>
     <servers />
   </component>
