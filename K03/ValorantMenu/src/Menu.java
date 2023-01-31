@@ -1,8 +1,6 @@
 import java.util.*;
 
 public class Menu {
-    ArrayList<Match> matchHistory = new ArrayList<Match>();
-
     public Menu() {}
 
     public boolean printMenu() throws InputMismatchException, WrongInputException {
@@ -40,7 +38,7 @@ public class Menu {
     }
 
     public void printMatchHistory() {
-        ArrayList<Match> matchHistory = this.getMatchHistory();
+        ArrayList<Match> matchHistory = MatchHistory.getMatchHistory();
         if (matchHistory == null || matchHistory.size() == 0) {
             System.out.println("Match history not found.");
         } else {
@@ -75,7 +73,7 @@ public class Menu {
         } else {
             gameState = "DRAW";
         }
-        this.addMatchToHistory(new Match(mode, gameState, roundsWon, roundsLost, rankedRating, agent, Match.chooseMap()));
+        MatchHistory.addMatchToHistory(new Match(mode, gameState, roundsWon, roundsLost, rankedRating, agent, Match.chooseMap()));
         System.out.println(mode + " match created.");
     }
 
@@ -135,7 +133,6 @@ public class Menu {
     }
 
     private void showAgentsMenu() {
-        Agents agentsCall = new Agents();
         Scanner sc = new Scanner(System.in);
         int usrInput;
         boolean backToMenu = true;
@@ -174,17 +171,5 @@ public class Menu {
                 backToMenu = false;
             }
         } while (backToMenu);
-    }
-
-    public ArrayList<Match> getMatchHistory() {
-        return this.matchHistory;
-    }
-
-    public void setMatchHistory(ArrayList<Match> matchHistory) {
-        this.matchHistory = matchHistory;
-    }
-
-    public void addMatchToHistory(Match match) {
-        this.matchHistory.add(match);
     }
 }

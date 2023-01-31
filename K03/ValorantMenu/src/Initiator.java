@@ -1,7 +1,6 @@
 public class Initiator extends Agents {
     public Initiator (String name) {
-        this.name = name;
-        this.role = "Initiator";
+        super(name, "Initiator");
     }
     @Override
     public void getRoleDescription() {

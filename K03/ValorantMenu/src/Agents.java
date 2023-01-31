@@ -1,18 +1,11 @@
 import java.util.ArrayList;
 
-public class Agents {
+abstract public class Agents {
 
     String name;
     String role;
 
-    public Agents() {
-    }
-
-    public Agents(String name) {
-        this.name = name;
-        this.role = "Duelist";
-    }
-    public Agents (String name, String role) {
+    public Agents(String name, String role) {
         this.name = name;
         this.role = role;
     }
@@ -42,8 +35,7 @@ public class Agents {
         return agents;
     }
 
-    public void getRoleDescription() {
-    }
+    abstract public void getRoleDescription();
 
     public String getName() {
         return name;

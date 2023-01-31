@@ -1,8 +1,7 @@
 public class Controller extends Agents {
 
     public Controller (String name) {
-        this.name = name;
-        this.role = "Controller";
+        super(name, "Controller");
     }
     @Override
     public void getRoleDescription() {

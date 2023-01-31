@@ -1,7 +1,6 @@
 public class Duelist extends Agents {
     public Duelist (String name) {
-        this.name = name;
-        this.role = "Duelist";
+        super(name, "Duelist");
     }
     @Override
     public void getRoleDescription() {

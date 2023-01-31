@@ -1,8 +1,7 @@
 public class Sentinel extends Agents {
 
     public Sentinel (String name) {
-        this.name = name;
-        this.role = "Sentinel";
+        super(name, "Sentinel");
     }
     @Override
     public void getRoleDescription() {
